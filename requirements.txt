@@ -1,0 +1,4 @@
+streamlit
+deta
+argon2-cffi
+streamlit-extras
