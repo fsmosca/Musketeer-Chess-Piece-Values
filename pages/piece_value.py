@@ -76,19 +76,32 @@ with tab1:
     df = pd.DataFrame(ss.dbc)
     df = df[['key', 'PieceType', 'Variant', 'Middle', 'Ending', 'Mean']]
 
-    cols = st.columns([1, 1], gap='small')
+    cols = st.columns([1, 1], gap='large')
 
     with cols[0]:
         st.markdown('### Piece Type List')
-        st.radio('Variant', options=['All', 'Chess', 'MC1', 'MC1.1'], key='vark', horizontal=True, label_visibility='collapsed')
-        if ss.vark == 'All':
-            df_filtered = df
+        cols2 = st.columns([1, 1, 1, 1])
+        cols2[0].checkbox('Chess', value = False, key='chessk')
+        cols2[1].checkbox('MC1', value = False, key='mc1k')
+        cols2[2].checkbox('MC1.1', value = False, key='mc11k')
+
+        variants = []
+        if ss.mc1k:
+            variants.append('MC1')
+        if ss.chessk:
+            variants.append('Chess')
+        if ss.mc11k:
+            variants.append('MC1.1')
+
+        # Filter the DataFrame based on the variants list
+        if variants:
+            df_filtered = df[df['Variant'].isin(variants)]
         else:
-            df_filtered = df.loc[df['Variant'] == ss.vark]
+            df_filtered = df
 
         df_filtered = df_filtered.reset_index(drop=True)
 
-        event = st.dataframe(df_filtered, hide_index=True, on_select='rerun', height=600)
+        event = st.dataframe(df_filtered, hide_index=True, on_select='rerun', height=500, use_container_width=True)
 
     selected_info = event['selection']
 
@@ -97,7 +110,7 @@ with tab1:
         holder = st.empty()
         df_selected = df_filtered.loc[selected_info['rows']]
         df_selected = df_selected.reset_index(drop=True)
-        event2 = st.dataframe(df_selected, hide_index=True, on_select='rerun', selection_mode='single-row')
+        event2 = st.dataframe(df_selected, hide_index=True, on_select='rerun', selection_mode='single-row', use_container_width=True)
         selected_info2 = event2['selection']
         holder.markdown(f"**Total Mean Value: {df_selected['Mean'].sum().round(0)}**")
         if len(selected_info2['rows']):
