@@ -62,7 +62,7 @@ def read_deta_db():
 st.logo('assets/images/logo.png', link='https://www.musketeerchess.net/p/home/index.html')
 Nav()
 
-if ss.username == st.secrets['admin1'] or ss.username == st.secrets['admin2']:
+if ss.username == st.secrets['admin1']:
     ss.admins = False
 
 st.header('Piece Values')
@@ -80,14 +80,22 @@ with tab1:
 
     with cols[0]:
         st.markdown('### Piece Type List')
-        event = st.dataframe(df, hide_index=True, on_select='rerun', height=600)
+        st.radio('Variant', options=['All', 'Chess', 'MC1', 'MC1.1'], key='vark', horizontal=True, label_visibility='collapsed')
+        if ss.vark == 'All':
+            df_filtered = df
+        else:
+            df_filtered = df.loc[df['Variant'] == ss.vark]
+
+        df_filtered = df_filtered.reset_index(drop=True)
+
+        event = st.dataframe(df_filtered, hide_index=True, on_select='rerun', height=600)
 
     selected_info = event['selection']
 
     with cols[1]:
         st.markdown('### Selected Pieces')
         holder = st.empty()
-        df_selected = df.loc[selected_info['rows']]
+        df_selected = df_filtered.loc[selected_info['rows']]
         df_selected = df_selected.reset_index(drop=True)
         event2 = st.dataframe(df_selected, hide_index=True, on_select='rerun', selection_mode='single-row')
         selected_info2 = event2['selection']
