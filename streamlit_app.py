@@ -27,7 +27,7 @@ if not ss.is_login:
 st.logo('assets/images/logo.png', link='https://www.musketeerchess.net/p/home/index.html')
 Nav()
 
-st.header(f'{st.secrets["page_title"]}')
+st.header(f'{st.secrets["main_title"]}')
 
 st.markdown('''
 :blue[**Musketeer Chess**] is a modern variant of traditional chess introduced by :green[**Zied Haddad**]. It incorporates new pieces and mechanics to add variety and complexity to the game.
