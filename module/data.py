@@ -25,4 +25,10 @@ PT_IMAGE = {
     'IMG465': 'https://user-images.githubusercontent.com/22366935/130031903-00bdbc92-b806-4625-9c5b-eab7ed5fbf9c.png',
     'IMG466': 'https://user-images.githubusercontent.com/22366935/130037383-b93bfc38-f3db-4d60-ab99-b462f612c337.png',
     'IMG467': 'https://user-images.githubusercontent.com/22366935/130055092-2e44a219-5217-47b1-b9f5-db81a15d777c.png',
+    'IMG468': 'https://user-images.githubusercontent.com/22366935/130062542-81f7cd88-57da-4ac8-9f51-da2cc3964da5.png',
+    'IMG469': 'https://user-images.githubusercontent.com/22366935/130062623-d5403469-b405-457e-a789-7ac39ee0ddbd.png',
+    'IMG470': 'https://user-images.githubusercontent.com/22366935/130062712-c5bf1ce2-1e7e-499e-94a4-e5cb105f190a.png',
+    'IMG471': 'https://user-images.githubusercontent.com/22366935/130062927-a4b55ac7-d945-47c7-8420-0a0775a74ca9.png',
+    'IMG472': 'https://user-images.githubusercontent.com/22366935/130063048-313b7dae-8f0e-4447-8c38-c0f88efd31b6.png',
+    'IMG473': 'https://user-images.githubusercontent.com/22366935/130063155-fa1a54e9-bde1-419e-8622-f826c2336a01.png',
 }
