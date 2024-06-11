@@ -1,0 +1,19 @@
+name,min_lbs,max_lbs
+Mini Flyweight,0,105
+Light Flyweight,106,108
+Flyweight,109,112
+Super Flyweight,113,115
+Bantamweight,116,118
+Super Bantamweight,119,122
+Featherweight,123,126
+Super Featherweight,127,130
+Lightweight,131,135
+Super Lightweight,136,140
+Welterweight,141,147
+Super Welterweight,148,154
+Middleweight,155,160
+Super Middleweight,161,168
+Light Heavyweight,169,175
+Cruiserweight,176,200
+Super Cruiserweight,201,224
+Heavyweight,225,500
