@@ -200,7 +200,7 @@ with tab2:
             var = st.selectbox("variant", options=['', 'Chess', 'MC1', 'MC1.1', 'MC2'])
             op = st.number_input("middle value", value=100, min_value=0, max_value=5000, step=1)
             en = st.number_input("ending value", value=100, min_value=0, max_value=5000, step=1)
-            submitted = st.form_submit_button("Store in database", disabled=ss.admins)
+            submitted = st.form_submit_button("Store in database", type='primary', disabled=ss.admins)
 
         if submitted:
             mean_value = int((op + en) / 2)
@@ -231,15 +231,21 @@ with tab2:
 
         st.divider()
 
+        # A tool to convert piece value to weight class.
         st.markdown('### Piece value to Weight class')
-
-        piece_value = st.text_input('Input Piece Value')
+        wtcols = st.columns([1, 1, 1], gap='small')
+        with wtcols[0]:
+            piece_value = st.text_input('Input Piece Value')
+        
         if piece_value:
             piece_value = int(piece_value)
             scaled_value = scale_value(piece_value)
             scaled_value = int(scaled_value)
             weight_class = find_weight_class(scaled_value)
-            st.write(f'Weight lbs: {scaled_value}, WEIGHT CLASS: {weight_class}')
+            with wtcols[1]:
+                st.text_input('Weight lbs', value=scaled_value, disabled=True)
+            with wtcols[2]:
+                st.text_input('Weight class', value=weight_class, disabled=True)
 
 with weight_tab:
     df = pd.read_csv('assets/csv/weight_classes.csv')
