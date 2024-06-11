@@ -20,4 +20,6 @@ PT_IMAGE = {
     'IMG458': 'https://user-images.githubusercontent.com/22366935/129841931-1b56ecdf-59e6-4417-a89f-818daf91428f.png',
     'IMG459': 'https://user-images.githubusercontent.com/22366935/129846645-47a318e5-3e8c-4444-8f2e-f614b6a98aa6.png',
     'IMG462': 'https://user-images.githubusercontent.com/22366935/129851164-2da86f82-ef77-4f8c-a0d1-96005b99ad86.png',
+    'IMG463': 'https://user-images.githubusercontent.com/22366935/129907122-77ca723a-8045-42af-9404-10e16176b061.png',
+    'IMG464': 'https://user-images.githubusercontent.com/22366935/130010117-f2caf15a-ac30-45f4-92e6-d72103e6c68e.png',
 }
