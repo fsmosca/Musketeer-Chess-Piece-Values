@@ -1,6 +1,7 @@
 import streamlit as st
 from streamlit import session_state as ss
 from deta import Deta
+import argon2
 from argon2 import PasswordHasher
 from module.nav import Nav
 from streamlit_extras.stylable_container import stylable_container
@@ -52,11 +53,19 @@ if not ss.is_login:
     if submitted:
         if username and password:
             res = db.get(username)
-            db_pw_hash = res['password']            
-            if ph.verify(db_pw_hash, password):
-                ss.is_login = True
-                ss.username = username
-                st.switch_page('streamlit_app.py')
+            if res:
+                db_pw_hash = res['password']  
+                try:          
+                    if ph.verify(db_pw_hash, password):
+                        ss.is_login = True
+                        ss.username = username
+                        st.switch_page('streamlit_app.py')
+                except argon2.exceptions.VerifyMismatchError:
+                    st.error('username or password is incorrect')
+                    st.stop()
+            else:
+                st.error('username or password is incorrect')
+                st.stop()
 else:
     st.write(f'Welcome {ss.username}')
 
