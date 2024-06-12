@@ -29,9 +29,6 @@ if 'is_login' not in ss:
     ss.is_login = False
     st.switch_page('pages/login.py')
 
-if 'dbc' not in ss:
-    ss.dbc = None
-
 if 'admins' not in ss:
     ss.admins = True
 
@@ -45,6 +42,11 @@ def read_deta_db():
     detap = Deta(st.secrets["deta_key"])
     dbd = detap.Base("piecevalue")
     return dbd
+
+
+@st.cache_data(ttl=60)
+def get_db_data():
+    return db.fetch().items
 
 
 @st.cache_data
@@ -141,8 +143,8 @@ db = read_deta_db()
 tab1, tab2, weight_tab = st.tabs(['🔥 Piece Value', '📘 Data Input', '👊 Weight Classes'])
 
 with tab1:
-    ss.dbc = db.fetch().items
-    df = pd.DataFrame(ss.dbc)
+    detadb = get_db_data()
+    df = pd.DataFrame(detadb)
     df = df[['key', 'PieceType', 'Variant', 'Category', 'Middle', 'Ending', 'Mean']]
 
     cols = st.columns([1, 1], gap='large')
@@ -222,6 +224,7 @@ with tab2:
                 st.error(f"Unexpected error: {e}")
             else:
                 st.success('Data is successfully saved!!')
+                st.cache_data.clear()
 
     with cols[1]:
         st.markdown('### Update Piece Type Data')
