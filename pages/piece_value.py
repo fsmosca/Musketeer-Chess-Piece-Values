@@ -26,6 +26,7 @@ if 'data' not in ss:
     ss.data = {}
 
 if 'is_login' not in ss:
+    ss.is_login = False
     st.switch_page('pages/login.py')
 
 if 'dbc' not in ss:
