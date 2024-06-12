@@ -18,6 +18,7 @@ st.markdown("""
 
 
 if 'is_login' not in ss:
+    ss.is_login = False
     st.switch_page('pages/login.py')
 
 if not ss.is_login:
