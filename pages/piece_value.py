@@ -13,11 +13,16 @@ st.set_page_config(layout='wide', page_title=st.secrets['page_title'])
 
 st.markdown("""
     <style>    
-           /* Remove blank space at top and bottom */ 
-           .block-container {
-               padding-top: 1.5rem;
-               padding-bottom: 1rem;
-            }
+        /* Remove blank space at top and bottom */ 
+        .block-container {
+            padding-top: 1.5rem;
+            padding-bottom: 1rem;
+        }
+            
+        /*Adjust logo size*/
+        [alt=Logo] {
+            height: 3rem;
+        }
     </style>
     """, unsafe_allow_html=True)
 
