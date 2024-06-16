@@ -92,4 +92,5 @@ PT_IMAGE = {
     'Blade': 'https://user-images.githubusercontent.com/22366935/130987530-7c4aa06d-a82e-4e3c-9dd0-65706e42ba96.png',
     'DireWolf': 'https://user-images.githubusercontent.com/22366935/130993298-447b6434-cf37-42c6-9953-c6c05bc27de8.png',
     'Gazelle': 'https://user-images.githubusercontent.com/22366935/131234596-ce837d86-bb07-4b65-ab6a-c5bb3939c752.png',
+    'CamelAmazon': 'https://user-images.githubusercontent.com/22366935/131234726-7e7e21e9-b652-4555-b246-a335a8b39a9e.png',
 }
