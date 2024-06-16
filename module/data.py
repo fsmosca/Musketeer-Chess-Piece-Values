@@ -87,4 +87,9 @@ PT_IMAGE = {
     'IMG530': 'https://user-images.githubusercontent.com/22366935/130797817-953dbe56-7517-4cce-9f65-257ecfc1069e.png',
     'Catapult': 'https://user-images.githubusercontent.com/22366935/130988847-994a162c-0cbe-4bae-94a6-096149b91ac2.png',
     'Chariot': 'https://user-images.githubusercontent.com/22366935/130989251-a659ffd7-22d7-45da-b269-787c2cc6e69e.png',
+    'AiledLion': 'https://user-images.githubusercontent.com/22366935/130986008-53344be9-f3aa-4eef-97cd-60c6357652ff.png',
+    'Artillery': 'https://user-images.githubusercontent.com/22366935/130987096-6f7495f1-c747-4a2e-b950-5a24c433418b.png',
+    'Blade': 'https://user-images.githubusercontent.com/22366935/130987530-7c4aa06d-a82e-4e3c-9dd0-65706e42ba96.png',
+    'DireWolf': 'https://user-images.githubusercontent.com/22366935/130993298-447b6434-cf37-42c6-9953-c6c05bc27de8.png',
+    'Gazelle': 'https://user-images.githubusercontent.com/22366935/131234596-ce837d86-bb07-4b65-ab6a-c5bb3939c752.png',
 }
