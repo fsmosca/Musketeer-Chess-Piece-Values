@@ -1,4 +1,4 @@
-streamlit
-deta
+streamlit==1.36.0
+deta==1.2.0
 argon2-cffi
-streamlit-extras
+streamlit-extras==0.4.3
